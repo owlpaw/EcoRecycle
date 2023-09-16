@@ -35,12 +35,17 @@ namespace EcoRecycle.UI
             if (selectedIndex == 0) //  "广告" 标签页的索引为 0
             {
                 // 在 "广告" 标签页上播放视频
-
+                PlayVideo();
             }
             else
             {
 
             }
+        }
+        private void PlayVideo()
+        {
+            axWindowsMediaPlayer1.URL = "D:\\work\\source\\EcoRecycle\\EcoRecycle\\bin\\Debug\\AdVideos\\绿水青山.mp4"; // 指定视频文件的路径
+            axWindowsMediaPlayer1.Ctlcontrols.play(); // 开始播放
         }
     }
 }

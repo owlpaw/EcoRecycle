@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form主窗口));
             this.splitContainer主页面 = new System.Windows.Forms.SplitContainer();
             this.tabControl上 = new System.Windows.Forms.TabControl();
             this.tabPage广告 = new System.Windows.Forms.TabPage();
@@ -36,16 +37,18 @@
             this.tabControl下 = new System.Windows.Forms.TabControl();
             this.tabPage登录 = new System.Windows.Forms.TabPage();
             this.splitContainer登录 = new System.Windows.Forms.SplitContainer();
-            this.tabPage用户 = new System.Windows.Forms.TabPage();
-            this.button扫码登录 = new System.Windows.Forms.Button();
-            this.button手机号登录 = new System.Windows.Forms.Button();
-            this.button人脸识别 = new System.Windows.Forms.Button();
             this.buttonIC卡登录 = new System.Windows.Forms.Button();
+            this.button人脸识别 = new System.Windows.Forms.Button();
+            this.button手机号登录 = new System.Windows.Forms.Button();
+            this.button扫码登录 = new System.Windows.Forms.Button();
+            this.tabPage用户 = new System.Windows.Forms.TabPage();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer主页面)).BeginInit();
             this.splitContainer主页面.Panel1.SuspendLayout();
             this.splitContainer主页面.Panel2.SuspendLayout();
             this.splitContainer主页面.SuspendLayout();
             this.tabControl上.SuspendLayout();
+            this.tabPage广告.SuspendLayout();
             this.tabPage摄像.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer摄像)).BeginInit();
             this.splitContainer摄像.SuspendLayout();
@@ -54,6 +57,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer登录)).BeginInit();
             this.splitContainer登录.Panel2.SuspendLayout();
             this.splitContainer登录.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer主页面
@@ -93,6 +97,7 @@
             // 
             // tabPage广告
             // 
+            this.tabPage广告.Controls.Add(this.axWindowsMediaPlayer1);
             this.tabPage广告.Location = new System.Drawing.Point(22, 4);
             this.tabPage广告.Name = "tabPage广告";
             this.tabPage广告.Size = new System.Drawing.Size(1248, 349);
@@ -159,41 +164,18 @@
             this.splitContainer登录.SplitterDistance = 190;
             this.splitContainer登录.TabIndex = 0;
             // 
-            // tabPage用户
+            // buttonIC卡登录
             // 
-            this.tabPage用户.Location = new System.Drawing.Point(22, 4);
-            this.tabPage用户.Name = "tabPage用户";
-            this.tabPage用户.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage用户.Size = new System.Drawing.Size(1248, 349);
-            this.tabPage用户.TabIndex = 1;
-            this.tabPage用户.Text = "用户";
-            this.tabPage用户.UseVisualStyleBackColor = true;
-            // 
-            // button扫码登录
-            // 
-            this.button扫码登录.BackColor = System.Drawing.Color.LightBlue;
-            this.button扫码登录.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button扫码登录.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button扫码登录.Font = new System.Drawing.Font("新宋体", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button扫码登录.Location = new System.Drawing.Point(61, 26);
-            this.button扫码登录.Name = "button扫码登录";
-            this.button扫码登录.Size = new System.Drawing.Size(221, 105);
-            this.button扫码登录.TabIndex = 0;
-            this.button扫码登录.Text = "扫码登录";
-            this.button扫码登录.UseVisualStyleBackColor = false;
-            // 
-            // button手机号登录
-            // 
-            this.button手机号登录.BackColor = System.Drawing.Color.LightBlue;
-            this.button手机号登录.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button手机号登录.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button手机号登录.Font = new System.Drawing.Font("新宋体", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button手机号登录.Location = new System.Drawing.Point(358, 26);
-            this.button手机号登录.Name = "button手机号登录";
-            this.button手机号登录.Size = new System.Drawing.Size(221, 105);
-            this.button手机号登录.TabIndex = 1;
-            this.button手机号登录.Text = "手机号登录";
-            this.button手机号登录.UseVisualStyleBackColor = false;
+            this.buttonIC卡登录.BackColor = System.Drawing.Color.LightBlue;
+            this.buttonIC卡登录.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonIC卡登录.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonIC卡登录.Font = new System.Drawing.Font("新宋体", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.buttonIC卡登录.Location = new System.Drawing.Point(952, 26);
+            this.buttonIC卡登录.Name = "buttonIC卡登录";
+            this.buttonIC卡登录.Size = new System.Drawing.Size(221, 105);
+            this.buttonIC卡登录.TabIndex = 3;
+            this.buttonIC卡登录.Text = "IC卡登录";
+            this.buttonIC卡登录.UseVisualStyleBackColor = false;
             // 
             // button人脸识别
             // 
@@ -208,18 +190,50 @@
             this.button人脸识别.Text = "人脸识别";
             this.button人脸识别.UseVisualStyleBackColor = false;
             // 
-            // buttonIC卡登录
+            // button手机号登录
             // 
-            this.buttonIC卡登录.BackColor = System.Drawing.Color.LightBlue;
-            this.buttonIC卡登录.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttonIC卡登录.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttonIC卡登录.Font = new System.Drawing.Font("新宋体", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.buttonIC卡登录.Location = new System.Drawing.Point(952, 26);
-            this.buttonIC卡登录.Name = "buttonIC卡登录";
-            this.buttonIC卡登录.Size = new System.Drawing.Size(221, 105);
-            this.buttonIC卡登录.TabIndex = 3;
-            this.buttonIC卡登录.Text = "IC卡登录";
-            this.buttonIC卡登录.UseVisualStyleBackColor = false;
+            this.button手机号登录.BackColor = System.Drawing.Color.LightBlue;
+            this.button手机号登录.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button手机号登录.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button手机号登录.Font = new System.Drawing.Font("新宋体", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button手机号登录.Location = new System.Drawing.Point(358, 26);
+            this.button手机号登录.Name = "button手机号登录";
+            this.button手机号登录.Size = new System.Drawing.Size(221, 105);
+            this.button手机号登录.TabIndex = 1;
+            this.button手机号登录.Text = "手机号登录";
+            this.button手机号登录.UseVisualStyleBackColor = false;
+            // 
+            // button扫码登录
+            // 
+            this.button扫码登录.BackColor = System.Drawing.Color.LightBlue;
+            this.button扫码登录.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button扫码登录.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button扫码登录.Font = new System.Drawing.Font("新宋体", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.button扫码登录.Location = new System.Drawing.Point(61, 26);
+            this.button扫码登录.Name = "button扫码登录";
+            this.button扫码登录.Size = new System.Drawing.Size(221, 105);
+            this.button扫码登录.TabIndex = 0;
+            this.button扫码登录.Text = "扫码登录";
+            this.button扫码登录.UseVisualStyleBackColor = false;
+            // 
+            // tabPage用户
+            // 
+            this.tabPage用户.Location = new System.Drawing.Point(22, 4);
+            this.tabPage用户.Name = "tabPage用户";
+            this.tabPage用户.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage用户.Size = new System.Drawing.Size(1248, 349);
+            this.tabPage用户.TabIndex = 1;
+            this.tabPage用户.Text = "用户";
+            this.tabPage用户.UseVisualStyleBackColor = true;
+            // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(3, 3);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(1245, 346);
+            this.axWindowsMediaPlayer1.TabIndex = 0;
             // 
             // Form主窗口
             // 
@@ -239,6 +253,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer主页面)).EndInit();
             this.splitContainer主页面.ResumeLayout(false);
             this.tabControl上.ResumeLayout(false);
+            this.tabPage广告.ResumeLayout(false);
             this.tabPage摄像.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer摄像)).EndInit();
             this.splitContainer摄像.ResumeLayout(false);
@@ -247,6 +262,7 @@
             this.splitContainer登录.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer登录)).EndInit();
             this.splitContainer登录.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -266,5 +282,6 @@
         private System.Windows.Forms.Button buttonIC卡登录;
         private System.Windows.Forms.Button button人脸识别;
         private System.Windows.Forms.Button button手机号登录;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
 }
